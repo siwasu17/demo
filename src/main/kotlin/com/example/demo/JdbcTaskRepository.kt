@@ -4,7 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.stereotype.Repository
 
-@Repository
+//@Repository
 class JdbcTaskRepository(private val jdbcTemplate: JdbcTemplate) : TaskRepository {
     private val rowMapper = RowMapper<Task> { rs, _ ->
         Task(rs.getLong("id"), rs.getString("content"), rs.getBoolean("done"))
