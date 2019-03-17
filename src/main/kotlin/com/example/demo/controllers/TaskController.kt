@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.*
 import java.lang.RuntimeException
 
 @Controller
+@RequestMapping("tasks")
 class TaskController(private val taskRepository: TaskRepository) {
 
-    @GetMapping("tasks")
+    @GetMapping("")
     fun index(model: Model): String {
         /*
         val tasks = listOf(
@@ -27,12 +28,12 @@ class TaskController(private val taskRepository: TaskRepository) {
         return "tasks/index"
     }
 
-    @GetMapping("tasks/new")
+    @GetMapping("new")
     fun new(form: TaskCreateForm): String {
         return "tasks/new"
     }
 
-    @PostMapping("tasks")
+    @PostMapping("")
     fun create(@Validated form: TaskCreateForm,
                bindingResult: BindingResult): String {
         //validatedアノテーションによりバリデーションされて結果がbindingResultに入ってくる
@@ -45,7 +46,7 @@ class TaskController(private val taskRepository: TaskRepository) {
     }
 
 
-    @GetMapping("tasks/{id}/edit")
+    @GetMapping("{id}/edit")
     fun edit(@PathVariable("id") id: Long,
              form: TaskUpdateForm): String {
         val task = taskRepository.findById(id) ?: throw NotFoundException()
@@ -54,7 +55,7 @@ class TaskController(private val taskRepository: TaskRepository) {
         return "tasks/edit"
     }
 
-    @PatchMapping("tasks/{id}")
+    @PatchMapping("{id}")
     fun update(@PathVariable("id") id: Long,
                @Validated form: TaskUpdateForm,
                bindingResult: BindingResult): String {
