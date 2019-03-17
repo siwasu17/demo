@@ -1,8 +1,8 @@
-package com.example.demo
+package com.example.demo.repository
 
+import com.example.demo.models.Task
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
-import org.springframework.stereotype.Repository
 
 //@Repository
 class JdbcTaskRepository(private val jdbcTemplate: JdbcTemplate) : TaskRepository {

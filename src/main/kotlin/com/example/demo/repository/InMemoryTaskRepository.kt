@@ -1,9 +1,10 @@
-package com.example.demo
+package com.example.demo.repository
 
+import com.example.demo.models.Task
 import org.springframework.stereotype.Repository
 
 @Repository
-class InMemoryTaskRepository: TaskRepository{
+class InMemoryTaskRepository: TaskRepository {
     private val tasks: MutableList<Task> = mutableListOf()
 
     private val maxId: Long

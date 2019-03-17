@@ -1,4 +1,6 @@
-package com.example.demo
+package com.example.demo.repository
+
+import com.example.demo.models.Task
 
 interface TaskRepository {
     fun create(content: String): Task

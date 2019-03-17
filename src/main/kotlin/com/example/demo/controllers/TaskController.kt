@@ -1,5 +1,8 @@
-package com.example.demo
+package com.example.demo.controllers
 
+import com.example.demo.forms.TaskCreateForm
+import com.example.demo.repository.TaskRepository
+import com.example.demo.forms.TaskUpdateForm
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
