@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*
 import java.lang.RuntimeException
 
 @Controller
-@RequestMapping("tasks")
+@RequestMapping("tasks", method = arrayOf(RequestMethod.GET, RequestMethod.POST))
 class TaskController(private val taskRepository: TaskRepository) {
 
     @GetMapping("")
