@@ -29,7 +29,7 @@ class TaskController(private val taskRepository: TaskRepository) {
         val tasks = taskRepository.findAll()
         model.addAttribute("tasks", tasks)
 
-        return "tasks/index"
+        return "/tasks/index"
     }
 
     @GetMapping("new")
