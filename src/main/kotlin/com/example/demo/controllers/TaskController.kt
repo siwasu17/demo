@@ -11,13 +11,15 @@ import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 import java.lang.RuntimeException
 
+
+//@RequestMapping("/tasks")
 @Controller
-@RequestMapping("/tasks")
 class TaskController(private val taskRepository: TaskRepository) {
 
-    @GetMapping("")
+    //@GetMapping("")
+    @RequestMapping("/tasks")
     fun index(model: Model): String {
-        println("INDEX")
+        println("INDEX2")
 
         /*
         val tasks = listOf(
