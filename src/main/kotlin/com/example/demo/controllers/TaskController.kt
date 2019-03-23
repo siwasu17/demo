@@ -29,6 +29,7 @@ class TaskController(private val taskRepository: TaskRepository) {
         val tasks = taskRepository.findAll()
         model.addAttribute("tasks", tasks)
 
+        println("INDEX3")
         return "/tasks/index"
     }
 
