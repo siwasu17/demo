@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*
 import java.lang.RuntimeException
 
 @Controller
-@RequestMapping("tasks")
+@RequestMapping("/tasks")
 class TaskController(private val taskRepository: TaskRepository) {
 
     @GetMapping("")
@@ -71,11 +71,9 @@ class TaskController(private val taskRepository: TaskRepository) {
 
     }
 
-    /*
     @ExceptionHandler(NotFoundException::class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     fun handleNotFoundException(): String = "tasks/not_found"
-    */
 
     class NotFoundException : RuntimeException()
 }
