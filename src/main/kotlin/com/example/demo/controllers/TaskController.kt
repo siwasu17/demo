@@ -15,7 +15,8 @@ import java.lang.RuntimeException
 @RequestMapping("tasks")
 class TaskController(private val taskRepository: TaskRepository) {
 
-    @GetMapping("")
+//    @GetMapping("")
+    @RequestMapping("", method = [RequestMethod.GET])
     fun index(model: Model): String {
         /*
         val tasks = listOf(
