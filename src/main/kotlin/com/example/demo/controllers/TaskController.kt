@@ -12,15 +12,13 @@ import org.springframework.web.bind.annotation.*
 import java.lang.RuntimeException
 
 
-//@RequestMapping("/tasks")
+//@RequestMapping("tasks")
 @Controller
 class TaskController(private val taskRepository: TaskRepository) {
 
     //@GetMapping("")
     @RequestMapping("/tasks")
     fun index(model: Model): String {
-        println("INDEX2")
-
         /*
         val tasks = listOf(
                 Task(1, "ご飯を炊く", false),
@@ -29,8 +27,7 @@ class TaskController(private val taskRepository: TaskRepository) {
         val tasks = taskRepository.findAll()
         model.addAttribute("tasks", tasks)
 
-        println("INDEX3")
-        return "/tasks/index"
+        return "tasks/index"
     }
 
     @GetMapping("new")
